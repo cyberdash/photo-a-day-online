@@ -1,0 +1,26 @@
+# Add this to your vhosts file. 
+<VirtualHost *:80>
+        ServerAdmin cyberdash@gmail.com
+        ServerName pad.local
+        DocumentRoot /var/www/photo-a-day/htdocs
+        <Directory />
+                Order Deny,Allow
+                Deny from all
+                AllowOverride None
+        </Directory>
+
+        <Directory "/var/www/photo-a-day/htdocs">
+                Options -Indexes +MultiViews
+                AllowOverride None
+                Order Deny,Allow
+                Allow from all
+                AddType application/x-httpd-php .php
+        </Directory>
+
+        # error log
+        ErrorLog /var/log/apache2/pad-error.log
+        LogLevel warn
+
+        # access log
+        CustomLog /var/log/apache2/pad-access.log combined
+</VirtualHost>
