@@ -13,6 +13,8 @@
 	    return $fileCount;
 	}
 
+	print_r($_FILES);
+
 	
 	$uploadedFileName = $_FILES["filedata"]["name"];
 	$tempName = $_FILES["filedata"]["tmp_name"];
