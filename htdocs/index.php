@@ -1,28 +1,18 @@
-<?php
-	$UPLOADS_DIR = 'photos';
+<html>
+	<head>
+		<link rel="stylesheet" href="/css/photos.css" type="text/css" />
+	</head>
 
-	function countFiles($directory) {
-		// integer starts at 0 before counting
-	    $fileCount = 0; 
-	    if ($handle = opendir($directory)) {
-	        while (($file = readdir($handle)) !== false) {
-	            if (!in_array($file, array('.', '..')) && !is_dir($directory.$file)) 
-	                $fileCount++;
-	        }
-	    }
-	    return $fileCount;
-	}
-
-	
-	$uploadedFileName = $_FILES["filedata"]["name"];
-	$tempName = $_FILES["filedata"]["tmp_name"];
-
-	$uploadedFileExtension = explode(".", $uploadedFileName)[1];
-
-	$filesInDirectory = countFiles($UPLOADS_DIR);
-	$newFileName = $filesInDirectory + 1;
-	$newFileName = strval($newFileName) . "." . $uploadedFileExtension;
-
-	move_uploaded_file($tempName, "$UPLOADS_DIR/$newFileName");
-	    
-?>
+	<body>
+		<?php
+			$files = scandir(".");
+			foreach ($files as $file) {
+				if (in_array($file, [".", "..", "index.php"])) {
+					continue;
+				}
+				$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
+				echo '<img src="', $thumbnail, '" class="pad-photo"/>';
+			}
+		?>
+	</body>
+</html>
