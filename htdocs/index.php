@@ -12,6 +12,7 @@
 				}
 				$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
 				echo '<img src="', $thumbnail, '" class="pad-photo"/>';
+				phpinfo();
 			}
 		?>
 	</body>
