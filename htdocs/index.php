@@ -5,9 +5,9 @@
 
 	<body>
 		<?php
-			$files = scandir(".");
+			$files = scandir("photos");
 			foreach ($files as $file) {
-				if (in_array($file, [".", "..", "index.php"])) {
+				if (in_array($file, [".", ".."])) {
 					continue;
 				}
 				$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
