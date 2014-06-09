@@ -1,18 +1,24 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="/css/photos.css" type="text/css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/js/jquery-debounce.js"></script>
+		<script src="/js/photos.js"></script>
 	</head>
 
 	<body>
-		<?php
-			$files = scandir("photos");
-			foreach ($files as $file) {
-				if (in_array($file, [".", ".."])) {
-					continue;
+		<div id="timeline">
+			<?php
+				$files = scandir("photos");
+				foreach ($files as $file) {
+					if (in_array($file, [".", ".."])) {
+						continue;
+					}
+					$thumbnail = "/thumbnail.php?img=photos/$file&h=200";
+					echo '<img data-filename="photos/', $file, '" src="', $thumbnail, '" class="pad-photo"/>';
 				}
-				$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
-				echo '<img src="', $thumbnail, '" class="pad-photo"/>';
-			}
-		?>
+			?>
+		</div>
+		<div id="preview"><img/></div>
 	</body>
 </html>

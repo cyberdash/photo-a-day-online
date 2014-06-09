@@ -1,4 +1,54 @@
+body {
+	margin: 0;
+	background: black;
+}
+
 .pad-photo {
-	height: 100px;
-	display: inline-block;
+	width: 100%;
+}
+
+#timeline {
+	position: relative;
+	top: 40%;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+}
+
+#preview {
+	top: 50%;
+	left: 50%;
+
+	width: 400px;
+	height: 300px;
+
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-top: -150px;
+	margin-left: -200px;
+
+	padding: 0;
+
+	position: fixed;
+}
+
+#preview img {
+	width: 100%;
+	margin-top: auto;
+}
+
+.loading {
+  position: relative;
+}
+
+.loading:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
