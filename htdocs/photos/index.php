@@ -10,7 +10,8 @@
 				if (in_array($file, [".", "..", "index.php"])) {
 					continue;
 				}
-				echo '<img src="', $file, '" class="pad-photo"/>';
+				$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
+				echo '<img src="', $thumbnail, '" class="pad-photo"/>';
 			}
 		?>
 	</body>
