@@ -10,22 +10,22 @@ body {
 #timeline {
 	position: relative;
 	top: 40%;
-	width: 200px;
+	width: 150px;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -75px;
 }
 
 #preview {
 	top: 50%;
 	left: 50%;
 
-	width: 400px;
-	height: 300px;
+	width: 600px;
+	height: 400px;
 
 	margin-right: 0;
 	margin-bottom: 0;
-	margin-top: -150px;
-	margin-left: -200px;
+	margin-top: -200px;
+	margin-left: -300px;
 
 	padding: 0;
 

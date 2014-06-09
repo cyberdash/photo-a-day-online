@@ -14,7 +14,7 @@
 					if (in_array($file, [".", ".."])) {
 						continue;
 					}
-					$thumbnail = "/thumbnail.php?img=photos/$file&h=200";
+					$thumbnail = "/thumbnail.php?img=photos/$file&h=150";
 					echo '<img data-filename="photos/', $file, '" src="', $thumbnail, '" class="pad-photo"/>';
 				}
 			?>
