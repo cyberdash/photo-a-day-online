@@ -3,7 +3,7 @@ $(function(){
 	var LOADING_CLASS = 'loading';
 
 	function getCenterImageSource() {
-		var centerElement = document.elementFromPoint(window.screen.availWidth / 2, window.screen.availHeight / 2);
+		var centerElement = document.elementFromPoint($(document).width() / 2, $(document).height() / 2);
 		var centerImageSource = $(centerElement).attr('data-filename');
 		return centerImageSource;
 	}

@@ -1,9 +1,9 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="/css/grid.css" type="text/css" />
+		<link rel="stylesheet" href="/css/timeline.css" type="text/css" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="/js/jquery-debounce.js"></script>
-		<script src="/js/grid.js"></script>
+		<script src="/js/timeline.js"></script>
 	</head>
 
 	<body>
@@ -14,8 +14,8 @@
 					if (in_array($file, [".", ".."])) {
 						continue;
 					}
-					$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
-					echo '<img data-filename="photos/', $file, '" src="', $thumbnail, '" class="photo-small"/>';
+					$thumbnail = "/thumbnail.php?img=photos/$file&h=150";
+					echo '<img data-filename="photos/', $file, '" src="', $thumbnail, '" class="pad-photo"/>';
 				}
 			?>
 		</div>
