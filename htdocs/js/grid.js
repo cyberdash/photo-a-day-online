@@ -63,6 +63,10 @@ $(function () {
     		threshold: 200,
     		effect : "fadeIn"
     	});
+
+    	$('.photo-small').load(function(){
+    		scaleImagesToScreenWidth();
+    	});
 	});
 	
 });
