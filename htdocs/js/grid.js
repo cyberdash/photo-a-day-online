@@ -57,5 +57,12 @@ $(function () {
 	}, 100));
 
 	scaleImagesToScreenWidth();
+
+	$(function() {
+    	$(".photo-small").lazyload({
+    		threshold: 200,
+    		effect : "fadeIn"
+    	});
+	});
 	
 });
