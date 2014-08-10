@@ -1,26 +1,31 @@
+<?php
+	date_default_timezone_set('Australia/Sydney');
+	$now = time(); // or your date as well
+	$birthday = strtotime("1992-03-03");
+	$datediff = $now - $your_date;
+	$myAge = floor($datediff/(60*60*24*365));
+
+?>
+
 <html>
 	<head>
 		<link rel="stylesheet" href="/css/grid.css" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,700italic' rel='stylesheet' type='text/css'>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="/js/jquery-debounce.js"></script>
-		<script src="/js/jquery.lazyload.js" type="text/javascript"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
 
 		<script src="/js/grid.js"></script>
+		<script src="/js/loadphotos.js"></script>		
 	</head>
 
 	<body>
-		<div id="timeline">
-			<?php
-				$files = scandir("photos");
-				foreach ($files as $file) {
-					if (in_array($file, [".", ".."])) {
-						continue;
-					}
-					$thumbnail = "/thumbnail.php?img=photos/$file&h=100";
-					echo '<img data-filename="photos/', $file, '" data-original="', $thumbnail, '" class="photo-small"/>';
-				}
-			?>
+		<div id="about">
+			<h1>One photo, every day</h1>
+			<p> I have taken a photograph of my face every day since I was 17. I am currently <?php echo $myAge ?>.</p>
 		</div>
-		<div id="preview"><img/></div>
+		<div id="grid">
+			
+		</div>
 	</body>
 </html>

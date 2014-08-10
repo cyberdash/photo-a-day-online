@@ -24,9 +24,6 @@ $(function () {
 			$el.width(newWidth);
 			$el.height(newHeight);
 		});
-
-
-		console.log($row);
 	}
 
 	function scaleImagesToScreenWidth() {
@@ -58,15 +55,7 @@ $(function () {
 
 	scaleImagesToScreenWidth();
 
-	$(function() {
-    	$(".photo-small").lazyload({
-    		threshold: 200,
-    		effect : "fadeIn"
-    	});
-
-    	$('.photo-small').load(function(){
-    		scaleImagesToScreenWidth();
-    	});
-	});
+	window.ScalePhotos = {};
+	window.ScalePhotos.scaleImagesToScreenWidth = scaleImagesToScreenWidth;
 	
 });
