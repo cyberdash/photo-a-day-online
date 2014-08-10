@@ -11,6 +11,8 @@ foreach ($files as $file) {
 	array_push($photo_list, $photo_markup);
 }
 
+$photo_list = array_reverse($photo_list);
+
 echo json_encode($photo_list, JSON_HEX_QUOT | JSON_HEX_TAG);
 
 ?>
