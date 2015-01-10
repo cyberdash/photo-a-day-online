@@ -2,21 +2,21 @@
 	date_default_timezone_set('Australia/Sydney');
 	$now = time(); // or your date as well
 	$birthday = strtotime("1992-03-03");
-	$datediff = $now - $your_date;
+	$datediff = $now - $birthday;
 	$myAge = floor($datediff/(60*60*24*365));
 
 ?>
 
 <html>
 	<head>
-		<link rel="stylesheet" href="/css/grid.css" type="text/css" />
+		<link rel="stylesheet" href="css/grid.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,700italic' rel='stylesheet' type='text/css'>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="/js/jquery-debounce.js"></script>
+		<script src="js/jquery-debounce.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
 
-		<script src="/js/grid.js"></script>
-		<script src="/js/loadphotos.js"></script>		
+		<script src="js/grid.js"></script>
+		<script src="js/loadphotos.js"></script>
 	</head>
 
 	<body>
