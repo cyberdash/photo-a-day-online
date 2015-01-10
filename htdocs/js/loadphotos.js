@@ -1,5 +1,5 @@
 $(function(GRID) {
-	$.getJSON('../photolist.php', function(allPhotos) {
+	$.getJSON('photolist.php', function(allPhotos) {
 		var $container = $('#grid');
 
 		function loadNewPhoto() {
