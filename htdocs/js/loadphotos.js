@@ -26,12 +26,12 @@ $(function(GRID) {
 			var buffer = 800;
 			var nearBottom = document.body.scrollTop + window.innerHeight > document.body.scrollHeight - buffer;
 			if (nearBottom) {
-				loadMorePhotos(100);
+				loadMorePhotos(300);
 			}
 		}, 500));
 
 
-		loadMorePhotos(500);
+		loadMorePhotos(300);
 
 
 
