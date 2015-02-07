@@ -23,7 +23,7 @@ $(function(GRID) {
 		}
 
 		$(window).scroll($.debounce(function(){
-			var buffer = 400;
+			var buffer = 800;
 			var nearBottom = document.body.scrollTop + window.innerHeight > document.body.scrollHeight - buffer;
 			if (nearBottom) {
 				loadMorePhotos(100);
@@ -31,7 +31,7 @@ $(function(GRID) {
 		}, 500));
 
 
-		loadMorePhotos(100);
+		loadMorePhotos(500);
 
 
 
