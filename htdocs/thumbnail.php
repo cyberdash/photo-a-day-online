@@ -16,6 +16,7 @@
 
 define('PATH_TO_THUMBS', './thumbs/');
 define('PATH_TO_LOGS', './logs/');
+define('SERVER_NAME', 'joshnelson.com.au');
 
 // --------------------------------------------------------------------------
 // activate error handling
@@ -105,7 +106,7 @@ function serveThumb() {
 	//$this->generateThumb(); return;
 	
 	if (file_exists($this->pathToThumb)) {
-		$uri = 'http://' . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['PHP_SELF']), '/') . ltrim($this->pathToThumb, '.');
+		$uri = 'http://' . SERVER_NAME . rtrim(dirname($_SERVER['PHP_SELF']), '/') . ltrim($this->pathToThumb, '.');
 		header('Location: ' .  $uri);
 		header('Content-Length: ' . filesize($this->pathToThumb));
 		exit;
