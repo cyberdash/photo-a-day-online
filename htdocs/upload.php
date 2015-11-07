@@ -13,10 +13,23 @@
    	}
 
 
-	$uploadedFileName = $_FILES["filedata"]["name"];
+	function getExtension ($mime_type){
+		$extensions = array(
+                'image/jpeg' => 'jpeg',
+                'image/jpg' => 'jpeg',
+                'image/gif' => 'gif',
+                'image/png' => 'png'
+		);
+
+		return $extensions[$mime_type];
+	}
+
+
 	$tempName = $_FILES["filedata"]["tmp_name"];
 
-	$uploadedFileExtension = explode(".", $uploadedFileName)[1];
+    print_r($_FILES["filedata"]);
+
+	$uploadedFileExtension = getExtension($_FILES["filedata"]["type"]);
 
 	$newFileName = time();
 	$newFileName = strval($newFileName) . "." . $uploadedFileExtension;
