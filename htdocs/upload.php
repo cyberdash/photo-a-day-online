@@ -9,6 +9,7 @@
 	if ($passwordHash != md5($_POST["password"])) {
         	header("HTTP/1.1 401 Unauthorized");
         	error_log("Failed to authenticate with the client, wrong password");
+        	error_log($passwordHash, '!=', md5($_POST["password"]));
 		exit();
    	}
 
