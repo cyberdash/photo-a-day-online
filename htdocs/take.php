@@ -11,8 +11,11 @@
             <h1>Take a photo</h1>
         </div>
         <div class="take-photos">
-            <video autoplay></video>
-            <canvas class="hidden" width="640" height="480"></canvas>
+            <div class="video-container">
+                <video autoplay></video>
+                <canvas width="640" height="480" id="video-overlay"></canvas>
+                <canvas class="hidden" width="640" height="480" id="video-screenshot"></canvas>
+            </div>
         </div>
         <div id="controls" class="hidden">
             <input placeholder="Password" name="password" id="password" type="password">

@@ -1,13 +1,15 @@
-#button {
-    text-align: center;
-}
-
-video {
+#video-overlay {
     cursor: pointer;
 }
 
-.take-photos {
-    text-align: center;
+.video-container {
+    width: 100%;
+    height: 480px;
+}
+
+video, #video-overlay, #video-screenshot {
+    position: absolute;
+    left: calc(50% - 320px);
 }
 
 .hidden {
