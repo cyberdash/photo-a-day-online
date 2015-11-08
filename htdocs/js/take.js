@@ -18,11 +18,23 @@ function dataURLtoBlob (dataurl) {
     });
 }
 
+function enterTakePhotoMode () {
+    video.classList.remove('hidden');
+    canvas.classList.add('hidden');
+    document.getElementById('controls').classList.add('hidden');
+}
+
+function enterUploadMode () {
+    canvas.classList.remove('hidden');
+    video.classList.add('hidden');
+    document.getElementById('controls').classList.remove('hidden');
+}
+
 function takePhoto(localMediaStream) {
     if (localMediaStream) {
         ctx.drawImage(video, 0, 0);
-        document.getElementById('photo-file').value = getImageDataUrl(canvas);
     }
+    enterUploadMode();
 }
 
 function getImageDataUrl (canvas) {
@@ -32,7 +44,10 @@ function getImageDataUrl (canvas) {
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 navigator.getUserMedia({video: true, audio: false}, function(localMediaStream) {
     video.src = window.URL.createObjectURL(localMediaStream);
-    video.addEventListener('click', function () { takePhoto(localMediaStream) }, false);
+    video.addEventListener('click', function () {
+        canvas.classList.add('hidden');
+        takePhoto(localMediaStream)
+    }, false);
 
     // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
     // See crbug.com/110938.
@@ -50,5 +65,12 @@ document.getElementById('upload').addEventListener('click', function () {
     fetch('/upload', {
         method: 'post',
         body: data
-    })
+    }).then(function (response) {
+        if (response.status === 200) {
+            toastr.success('Photo uploaded successfully');
+        }
+        enterTakePhotoMode();
+    });
 });
+
+document.getElementById('cancel').addEventListener('click', enterTakePhotoMode);

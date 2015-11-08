@@ -1,0 +1,25 @@
+#button {
+    text-align: center;
+}
+
+video {
+    cursor: pointer;
+}
+
+.take-photos {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#controls {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#controls input {
+    padding: 2px;
+    border-radius: 2px;
+}
