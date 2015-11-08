@@ -62,7 +62,7 @@ document.getElementById('upload').addEventListener('click', function () {
     data.append('filedata', blob);
     data.append('password', document.getElementById('password').value);
 
-    fetch('/upload', {
+    fetch('upload', {
         method: 'post',
         body: data
     }).then(function (response) {
